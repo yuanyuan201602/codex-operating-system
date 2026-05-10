@@ -1,0 +1,28 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Secrets and local state
+.env
+.env.*
+*.pem
+*.key
+*.log
+
+# Dependencies and caches
+node_modules/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.cache/
+
+# Codex/browser local state
+.codex/
+.playwright-mcp/
+playwright-report/
+test-results/
+screenshots/
