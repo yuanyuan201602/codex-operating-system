@@ -26,3 +26,6 @@ __pycache__/
 playwright-report/
 test-results/
 screenshots/
+
+# Local-only project clones used by Codex Desktop
+workspace/

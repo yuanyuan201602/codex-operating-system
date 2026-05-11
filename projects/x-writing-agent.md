@@ -2,10 +2,22 @@
 
 Repository: `https://github.com/yuanyuan201602/x-writing-agent`
 
-Local Windows path:
+Recommended Mac path:
 
 ```text
-C:\Users\geekz\Desktop\X推文自动机
+~/Codex/projects/x-writing-agent
+```
+
+Recommended Windows path:
+
+```text
+C:\Users\geekz\Desktop\X-writing-agent
+```
+
+Optional local workspace path in this infrastructure repository:
+
+```text
+workspace\x-writing-agent
 ```
 
 Purpose:

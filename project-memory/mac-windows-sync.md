@@ -8,6 +8,9 @@ Make Mac and Windows Codex workspaces share project knowledge without copying lo
 
 ## What Syncs Through GitHub
 
+This infrastructure repository only syncs cross-project rules and indexes.
+Business project files sync through each business project's own GitHub repository.
+
 - `AGENTS.md`
 - `project-memory/`
 - `packs/`
@@ -38,10 +41,22 @@ Login may be required if GitHub credentials are not configured.
 
 ## On the Other Device
 
-1. Clone or pull the repository.
-2. Read that repository's `AGENTS.md`.
+1. Clone or pull this infrastructure repository.
+2. Read `AGENTS.md`.
 3. Read relevant `project-memory/` files.
-4. Run a local-only workflow before browser or account automation.
+4. Open the relevant file in `projects/`.
+5. Clone or pull the business project's own repository.
+6. Enter the business project and read that repository's `AGENTS.md`.
+7. Run a local-only workflow before browser or account automation.
+
+## If A Project Is Missing
+
+If a project from another computer does not show up here, check this in order:
+
+1. Was the project pushed to its own GitHub repository?
+2. Was a project index file added under `projects/` in this repository?
+3. Was this infrastructure repository committed and pushed after adding the index?
+4. Did the other device run `git pull origin main` in both repositories?
 
 ## When Login Is Needed
 
