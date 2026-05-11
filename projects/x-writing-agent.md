@@ -11,13 +11,13 @@ Recommended Mac path:
 Recommended Windows path:
 
 ```text
-C:\Users\geekz\Desktop\X-writing-agent
+C:\Users\geekz\Desktop\多机codex同步\workspace\x-writing-agent
 ```
 
-Optional local workspace path in this infrastructure repository:
+Legacy/local duplicate path to avoid using as the primary clone:
 
 ```text
-workspace\x-writing-agent
+C:\Users\geekz\Desktop\X推文自动机
 ```
 
 Purpose:
