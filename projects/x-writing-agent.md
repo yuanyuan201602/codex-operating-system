@@ -11,7 +11,19 @@ Recommended Mac path:
 Recommended Windows path:
 
 ```text
+%USERPROFILE%\Codex\projects\x-writing-agent
+```
+
+Current local convenience clone on this Windows machine:
+
+```text
 C:\Users\geekz\Desktop\多机codex同步\workspace\x-writing-agent
+```
+
+Optional local workspace path in this infrastructure repository:
+
+```text
+workspace\x-writing-agent
 ```
 
 Legacy/local duplicate path to avoid using as the primary clone:

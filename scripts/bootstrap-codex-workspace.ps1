@@ -17,6 +17,17 @@ function Get-RepoName {
   return $name -replace "\.git$", ""
 }
 
+function Expand-SyncPath {
+  param([string]$Path)
+
+  $expanded = [Environment]::ExpandEnvironmentVariables($Path)
+  if ($expanded.StartsWith("~")) {
+    $expanded = Join-Path $env:USERPROFILE $expanded.Substring(1).TrimStart("\", "/")
+  }
+
+  return $expanded
+}
+
 function Sync-Repo {
   param(
     [string]$Url,
@@ -59,7 +70,7 @@ function Get-ProjectEntries {
     $pathMatch = [regex]::Match($text, 'Recommended Windows path:\s*```text\s*(?<path>.*?)\s*```', "Singleline")
     $localPath = ""
     if ($pathMatch.Success) {
-      $localPath = $pathMatch.Groups["path"].Value.Trim()
+      $localPath = Expand-SyncPath $pathMatch.Groups["path"].Value.Trim()
     }
 
     if ([string]::IsNullOrWhiteSpace($localPath)) {

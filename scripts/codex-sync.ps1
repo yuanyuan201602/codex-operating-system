@@ -18,6 +18,17 @@ function Get-RepoRoot {
   return (Resolve-Path (Join-Path $scriptDir "..")).Path
 }
 
+function Expand-SyncPath {
+  param([string]$Path)
+
+  $expanded = [Environment]::ExpandEnvironmentVariables($Path)
+  if ($expanded.StartsWith("~")) {
+    $expanded = Join-Path $env:USERPROFILE $expanded.Substring(1).TrimStart("\", "/")
+  }
+
+  return $expanded
+}
+
 function Test-GitRepo {
   param([string]$Path)
   return (Test-Path (Join-Path $Path ".git"))
@@ -162,20 +173,26 @@ function Get-IndexedProjectPaths {
 
   foreach ($file in $projectFiles) {
     $text = Get-Content -LiteralPath $file.FullName -Raw -Encoding UTF8
-
-    $windowsMatches = [regex]::Matches($text, 'Recommended Windows path:\s*```text\s*(?<path>.*?)\s*```', "Singleline")
-    foreach ($match in $windowsMatches) {
-      $value = $match.Groups["path"].Value.Trim()
-      if ($value.Length -gt 0) {
-        $paths.Add($value)
-      }
-    }
+    $foundLocalOverride = $false
 
     $workspaceMatches = [regex]::Matches($text, 'Optional local workspace path.*?```text\s*(?<path>.*?)\s*```', "Singleline")
     foreach ($match in $workspaceMatches) {
       $value = $match.Groups["path"].Value.Trim()
       if ($value.Length -gt 0) {
         $paths.Add((Join-Path $RepoRoot $value))
+        $foundLocalOverride = $true
+      }
+    }
+
+    if ($foundLocalOverride) {
+      continue
+    }
+
+    $windowsMatches = [regex]::Matches($text, 'Recommended Windows path:\s*```text\s*(?<path>.*?)\s*```', "Singleline")
+    foreach ($match in $windowsMatches) {
+      $value = $match.Groups["path"].Value.Trim()
+      if ($value.Length -gt 0) {
+        $paths.Add((Expand-SyncPath $value))
       }
     }
   }
