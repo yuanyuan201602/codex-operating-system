@@ -21,7 +21,9 @@ __pycache__/
 .cache/
 
 # Codex/browser local state
-.codex/
+.codex/*
+!.codex/
+!.codex/README.md
 .playwright-mcp/
 playwright-report/
 test-results/

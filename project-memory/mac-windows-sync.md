@@ -13,6 +13,8 @@ Business project files sync through each business project's own GitHub repositor
 
 - `AGENTS.md`
 - `project-memory/`
+- `.agents/skills/`
+- repository-owned `.codex/` notes and actions
 - `packs/`
 - `docs/`
 - `templates/`
@@ -42,12 +44,27 @@ Login may be required if GitHub credentials are not configured.
 ## On the Other Device
 
 1. Clone or pull this infrastructure repository.
-2. Read `AGENTS.md`.
-3. Read relevant `project-memory/` files.
-4. Open the relevant file in `projects/`.
-5. Clone or pull the business project's own repository.
-6. Enter the business project and read that repository's `AGENTS.md`.
-7. Run a local-only workflow before browser or account automation.
+2. Run the bootstrap script for that operating system.
+3. Read `AGENTS.md`.
+4. Read relevant `project-memory/` files.
+5. Open the relevant file in `projects/`.
+6. Clone or pull the business project's own repository if the bootstrap script did not already do it.
+7. Enter the business project and read that repository's `AGENTS.md`.
+8. Run a local-only workflow before browser or account automation.
+
+Windows:
+
+```powershell
+git clone https://github.com/yuanyuan201602/codex-operating-system.git "$env:USERPROFILE\Codex\codex-operating-system"
+& "$env:USERPROFILE\Codex\codex-operating-system\scripts\bootstrap-codex-workspace.ps1"
+```
+
+Mac:
+
+```bash
+git clone https://github.com/yuanyuan201602/codex-operating-system.git "$HOME/Codex/codex-operating-system"
+bash "$HOME/Codex/codex-operating-system/scripts/bootstrap-codex-workspace.sh"
+```
 
 ## If A Project Is Missing
 

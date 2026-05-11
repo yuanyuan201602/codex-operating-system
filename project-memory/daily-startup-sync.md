@@ -7,6 +7,7 @@ Updated: 2026-05-11
 每天开机后打开 Codex，先自动完成一轮工作区同步检查：
 
 - 拉取本仓库最新的跨设备规则、项目索引和通用 Skill Pack。
+- 让 Codex 自动发现仓库内 `.agents/skills/` 下的能力。
 - 检查已登记业务项目是否有本地未提交变更。
 - 对待提交文件做基础敏感内容扫描。
 - 默认不自动推送业务项目内容，避免把业务内容、账号状态或秘密误传到云端。
@@ -26,6 +27,26 @@ Updated: 2026-05-11
 3. 对存在的业务项目执行安全检查。
 4. 列出需要你决定是否提交的变更。
 5. 检查用户级 Codex skills 目录，但不会直接同步 `~/.codex`。
+
+## First-Time Setup On Another Windows Computer
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\Users\<you>\Codex\codex-operating-system\scripts\bootstrap-codex-workspace.ps1"
+```
+
+如果还没有 clone 本仓库，可以先运行：
+
+```powershell
+git clone https://github.com/yuanyuan201602/codex-operating-system.git "$env:USERPROFILE\Codex\codex-operating-system"
+& "$env:USERPROFILE\Codex\codex-operating-system\scripts\bootstrap-codex-workspace.ps1"
+```
+
+## First-Time Setup On Mac
+
+```bash
+git clone https://github.com/yuanyuan201602/codex-operating-system.git "$HOME/Codex/codex-operating-system"
+bash "$HOME/Codex/codex-operating-system/scripts/bootstrap-codex-workspace.sh"
+```
 
 ## Sync This Infrastructure Repository To GitHub
 
@@ -61,14 +82,16 @@ git push
 可跨项目复用的 Skill Pack：
 
 ```text
-packs/<skill-name>/SKILL.md
+.agents/skills/<skill-name>/SKILL.md
 ```
 
 只服务单一业务项目的 Skill Pack：
 
 ```text
-<business-project>/packs/<project-skill>/SKILL.md
+<business-project>/.agents/skills/<project-skill>/SKILL.md
 ```
+
+`packs/` 可以作为归档或源码包目录，但 Codex 官方自动发现优先使用 `.agents/skills/`。
 
 不要同步：
 

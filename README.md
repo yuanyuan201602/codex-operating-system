@@ -8,6 +8,14 @@ It does not automatically sync every project from another computer. Each busines
 
 Local clones can live under `workspace/` for convenience, but that folder is intentionally ignored by Git.
 
+Codex-discoverable shared skills live in:
+
+```text
+.agents/skills/
+```
+
+Project-specific skills should live in each business repository's own `.agents/skills/`.
+
 ## Daily Startup Sync
 
 Windows:
@@ -23,3 +31,19 @@ To sync this infrastructure repository to GitHub after reviewing changed files:
 ```
 
 See `project-memory/daily-startup-sync.md` for the full workflow.
+
+## New Computer Bootstrap
+
+Windows:
+
+```powershell
+git clone https://github.com/yuanyuan201602/codex-operating-system.git "$env:USERPROFILE\Codex\codex-operating-system"
+& "$env:USERPROFILE\Codex\codex-operating-system\scripts\bootstrap-codex-workspace.ps1"
+```
+
+Mac:
+
+```bash
+git clone https://github.com/yuanyuan201602/codex-operating-system.git "$HOME/Codex/codex-operating-system"
+bash "$HOME/Codex/codex-operating-system/scripts/bootstrap-codex-workspace.sh"
+```

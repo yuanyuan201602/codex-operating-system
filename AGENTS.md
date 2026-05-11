@@ -27,16 +27,19 @@
 ## Repository Layout
 
 - `project-memory/`：跨项目长期记忆和工作流规范。
-- `packs/`：可复用或待安装的项目能力包。
+- `.agents/skills/`：Codex 官方可发现的跨项目 Skill。
+- `packs/`：可复用或待安装的项目能力包归档。
+- `.codex/`：本仓库可同步的 Codex app 项目说明或动作定义，不放本机状态。
 - `projects/`：业务项目索引、迁移说明和状态。
 
 ## Sync Rules
 
 - GitHub 是唯一同步层。
 - 每个业务项目保留自己的 `AGENTS.md`、`project-memory/`、`packs/<project-skill>/`。
+- 每个业务项目的 Codex 可发现 Skill 优先放在该项目的 `.agents/skills/<project-skill>/`。
 - 本仓库只记录跨项目规则和可复用能力。
 - 如果某个 Skill 只服务一个业务项目，优先放在对应项目仓库。
-- 如果某个 Skill 可被多个项目复用，放在本仓库 `packs/`。
+- 如果某个 Skill 可被多个项目复用，放在本仓库 `.agents/skills/`，必要时再在 `packs/` 保留归档。
 
 ## Handoff Rules
 
