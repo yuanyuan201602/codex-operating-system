@@ -28,6 +28,14 @@ Updated: 2026-05-11
 4. 列出需要你决定是否提交的变更。
 5. 检查用户级 Codex skills 目录，但不会直接同步 `~/.codex`。
 
+如果项目已经 clone 到本机，但没有出现在 Codex 侧边栏，运行：
+
+```powershell
+.\scripts\register-codex-workspaces.ps1
+```
+
+这个命令只修改本机 Codex UI 状态，并会先备份 `C:\Users\<you>\.codex\.codex-global-state.json`。它不会把 `.codex` 同步到 GitHub。运行后如果侧边栏没有立即刷新，重启 Codex。
+
 ## First-Time Setup On Another Windows Computer
 
 ```powershell

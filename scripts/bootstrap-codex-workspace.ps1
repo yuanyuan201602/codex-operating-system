@@ -109,6 +109,9 @@ if ($entries.Count -eq 0) {
 Write-Step "Run startup sync check"
 & (Join-Path $infraPath "scripts\codex-sync.ps1")
 
+Write-Step "Register local workspaces in Codex sidebar"
+& (Join-Path $infraPath "scripts\register-codex-workspaces.ps1")
+
 Write-Host ""
 Write-Host "Bootstrap complete. Open this folder in Codex:"
 Write-Host $infraPath

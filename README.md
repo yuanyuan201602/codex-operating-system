@@ -32,6 +32,14 @@ To sync this infrastructure repository to GitHub after reviewing changed files:
 
 See `project-memory/daily-startup-sync.md` for the full workflow.
 
+If projects exist on disk but do not appear in the Codex sidebar:
+
+```powershell
+.\scripts\register-codex-workspaces.ps1
+```
+
+Restart Codex after running it if the sidebar does not refresh immediately.
+
 ## New Computer Bootstrap
 
 Windows:
