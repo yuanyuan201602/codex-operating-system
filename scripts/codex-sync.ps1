@@ -179,8 +179,11 @@ function Get-IndexedProjectPaths {
     foreach ($match in $workspaceMatches) {
       $value = $match.Groups["path"].Value.Trim()
       if ($value.Length -gt 0) {
-        $paths.Add((Join-Path $RepoRoot $value))
-        $foundLocalOverride = $true
+        $localOverride = Join-Path $RepoRoot $value
+        if (Test-Path -LiteralPath $localOverride) {
+          $paths.Add($localOverride)
+          $foundLocalOverride = $true
+        }
       }
     }
 
