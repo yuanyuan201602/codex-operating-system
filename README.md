@@ -14,6 +14,11 @@ Codex-discoverable shared skills live in:
 .agents/skills/
 ```
 
+Current shared skills:
+
+- `codex-workspace-sync`: sync Codex projects, project memory, and repository-owned skills across computers through GitHub.
+- `battle-map-video`: Chinese-language workflow for historical battle-map explainer videos (research, geographic anchors, frontline animation, narration sync, render checks). Case study: Smolensk 1941.
+
 Project-specific skills should live in each business repository's own `.agents/skills/`.
 
 ## Daily Startup Sync

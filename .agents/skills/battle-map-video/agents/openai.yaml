@@ -1,0 +1,4 @@
+interface:
+  display_name: "战役地图视频工作流"
+  short_description: "把史料、地理数据和参考画面转成可检查、可修改的战役地图视频"
+  default_prompt: "使用 $battle-map-video 接手或制作战役地图视频，先读取已有工程和参考资料，再完成当前获准范围内的样片、成片与检查。"
