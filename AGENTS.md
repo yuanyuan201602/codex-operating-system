@@ -70,3 +70,23 @@
 - 新增同步清单。
 - 更新项目索引。
 - 创建不含秘密的项目 Skill Pack。
+
+## Cursor Cloud specific instructions
+
+本仓库没有应用服务器、包管理器或测试命令。Cloud Agent 环境在默认镜像上安装 PowerShell 7，用来运行 `scripts/*.ps1`。Git、Bash 和 Node.js 已在默认镜像中。
+
+Linux 上的端到端检查是引导脚本。它会按 `projects/*.md` 里的仓库地址克隆基础设施仓库和已登记业务项目：
+
+```bash
+bash scripts/bootstrap-codex-workspace.sh "$HOME/Codex"
+bash scripts/bootstrap-codex-workspace.sh "$HOME/Codex"
+```
+
+第二次运行应对已有克隆执行 `git pull --ff-only`。
+
+Windows 日常检查是 `scripts/codex-sync.ps1`。在 Linux 上运行前设置 `USERPROFILE`。该脚本用 Windows 路径分隔符检查已登记项目，所以业务项目的拉取和状态检查以 bash 引导脚本为准。`scripts/register-codex-workspaces.ps1` 只改本机 `$USERPROFILE/.codex/.codex-global-state.json`，需要 Node.js，并且会先写一份备份；不要把这份状态提交到 Git。
+
+```bash
+export USERPROFILE="$HOME"
+pwsh -NoProfile -File scripts/codex-sync.ps1 -SkipPull
+```
