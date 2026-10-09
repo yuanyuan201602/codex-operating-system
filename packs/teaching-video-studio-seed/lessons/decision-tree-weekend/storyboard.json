@@ -1,0 +1,6 @@
+{
+  "lessonId": "decision-tree-weekend",
+  "approved": true,
+  "coreConcept": "判断树：把大问题拆成一个个“是/否”小问题，按答案一路走到结果。",
+  "closingQuestion": "如果周日下雨，你会走到哪一个结果？"
+}

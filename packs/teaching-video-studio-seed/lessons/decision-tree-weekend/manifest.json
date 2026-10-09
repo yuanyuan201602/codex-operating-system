@@ -1,0 +1,29 @@
+{
+  "lessonId": "decision-tree-weekend",
+  "style": "clean-diagram",
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "audio": {
+    "mode": "silent",
+    "durationSource": "visual"
+  },
+  "scenes": [
+    {
+      "id": "s01-intro",
+      "durationSec": 10
+    },
+    {
+      "id": "s02-branch",
+      "durationSec": 28
+    },
+    {
+      "id": "s03-case",
+      "durationSec": 18
+    },
+    {
+      "id": "s04-takeaway",
+      "durationSec": 12
+    }
+  ]
+}

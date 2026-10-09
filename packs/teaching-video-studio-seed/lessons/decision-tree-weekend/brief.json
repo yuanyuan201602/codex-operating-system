@@ -1,0 +1,18 @@
+{
+  "lessonId": "decision-tree-weekend",
+  "category": "process",
+  "styleId": "clean-diagram",
+  "knowledgePoint": "判断树：用条件一步步做选择",
+  "grade": "小学五年级",
+  "emphasis": "用“周末怎么出行”的生活例子，讲清分支判断。",
+  "assets": [],
+  "teachingGoal": "学生看完能复述：判断树把一个大问题拆成一个个“是/否”小问题，按答案一路走到结果。",
+  "prerequisites": ["会回答“是/否”问题", "知道“如果……就……”的说法"],
+  "misconceptions": [
+    "以为判断树只能有一条路，忽略“否”这一支",
+    "把示意例子里的判断顺序当成唯一正确的顺序",
+    "把判断树误解为机器学习训练"
+  ],
+  "locked": ["例子为周末出行", "只讲分支判断，不涉及机器学习训练"],
+  "analogyBoundary": "路线选择只用来说明“按条件走向不同结果”，不扩展到机器学习如何自动生成判断树。"
+}
