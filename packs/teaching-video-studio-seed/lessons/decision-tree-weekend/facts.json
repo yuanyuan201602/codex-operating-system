@@ -1,0 +1,14 @@
+{
+  "facts": [
+    {
+      "id": "f1",
+      "statement": "“周末出行”是为讲解而自拟的生活例子，不是真实调查或真实人物经历。",
+      "kind": "teaching-illustration"
+    },
+    {
+      "id": "f2",
+      "statement": "判断树把一个问题拆成依次回答的“是/否”问题，每个答案通向下一个问题或最终结果。",
+      "kind": "teaching-illustration"
+    }
+  ]
+}
